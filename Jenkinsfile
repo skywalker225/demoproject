@@ -6,6 +6,7 @@ pipeline {
       steps {
         echo 'Building...'
         sh 'pwd'
+        sh 'touch test_build_file.txt'
         sh 'ls'
         sh 'make --version'
         sh 'make'
