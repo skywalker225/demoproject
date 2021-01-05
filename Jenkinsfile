@@ -11,7 +11,7 @@ pipeline {
         sh 'touch demo_file.txt'
         sh 'ls'
         
-        withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'skywalker225', passwordVariable: 'xxxx')]) {
+        withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh 'echo $PASSWORD'
           echo USERNAME
           echo "username is $USERNAME"
