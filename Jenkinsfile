@@ -10,7 +10,7 @@ pipeline {
         sh 'ls'
         sh 'git --version'
         sh 'make --version'
-        sh 'make'
+        //sh 'make'
       }
     }
     stage('Test') {
