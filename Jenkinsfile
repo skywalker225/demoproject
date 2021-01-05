@@ -8,6 +8,7 @@ pipeline {
         sh 'pwd'
         sh 'ls'
         sh 'make --version'
+        sh 'make'
       }
     }
     stage('Test') {
