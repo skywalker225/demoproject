@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 # wget is needed to get the toolchain, make is needed for builing your 
 # projects
-RUN apt-get update && apt-get install -y wget make
+RUN apt-get update && apt-get install -y wget make git
 
 # get the toolchain
 RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2 -O gcc-arm-none-eabi.tar.bz2
@@ -15,3 +15,4 @@ RUN rm gcc-arm-none-eabi.tar.bz2
 
 # add the tools to the path
 ENV PATH="/gcc-arm-none-eabi/bin:${PATH}"
+
