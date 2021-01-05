@@ -8,6 +8,7 @@ pipeline {
         sh 'pwd'
         writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
         sh 'ls'
+        sh 'git --version'
         sh 'make --version'
         sh 'make'
       }
