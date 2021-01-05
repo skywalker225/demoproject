@@ -6,7 +6,7 @@ pipeline {
       steps {
         echo 'Building...'
         sh 'pwd'
-        sh 'touch test_build_file.txt'
+        writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
         sh 'ls'
         sh 'make --version'
         sh 'make'
