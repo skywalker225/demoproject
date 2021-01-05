@@ -13,7 +13,7 @@ pipeline {
         sh 'pwd'
         sh 'touch demo_file.txt'
         sh 'ls'
-        
+        echo ${GIT_AUTH_USR}
         //withCredentials([usernamePassword(credentialsId: 'GitHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           //sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           //sh 'docker push shanem/spring-petclinic:latest'
