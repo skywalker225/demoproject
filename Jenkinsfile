@@ -3,6 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       agent { dockerfile true }
+      environment {
+        GIT_AUTH = credentials('mygithub')
+      }
       steps {
         echo 'Building...'
         sh 'git --version'
@@ -11,11 +14,11 @@ pipeline {
         sh 'touch demo_file.txt'
         sh 'ls'
         
-        withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-          sh 'echo $PASSWORD'
-          echo USERNAME
-          echo "username is $USERNAME"
-        }
+        //withCredentials([usernamePassword(credentialsId: 'GitHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          //sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          //sh 'docker push shanem/spring-petclinic:latest'
+          //echo
+        //}
         
         //git config user.name 'my-ci-user'
         //git config user.email 'my-ci-user@users.noreply.github.example.com'
