@@ -40,7 +40,7 @@ ASRC = ./Drivers/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc/startup_stm32h74
 INCLUDE += -I./inc
 INCLUDE += -I./Drivers/CMSIS/Device/ST/STM32H7xx/Include
 INCLUDE += -I./Drivers/CMSIS/Core/Include
-INCLUDE += -I./Drivers/STM32H7xx_HAL_Driver/inc
+INCLUDE += -I./Drivers/STM32H7xx_HAL_Driver/Inc
 
 #Gather objects to build
 OBJS = $(ASRC:.s=.o) $(SRC:.c=.o)
